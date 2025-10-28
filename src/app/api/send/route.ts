@@ -1,9 +1,11 @@
 import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
-import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export async function POST() {
+  return new Response(JSON.stringify({ success: true }), { status: 200 });
+}
+
 
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
