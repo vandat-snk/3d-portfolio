@@ -25,7 +25,7 @@ const config = {
   ],
   author: "VanDat_",
   email: "datlamson2005@gmail.com",
-  site: "https://nareshkhatri.site",
+  site: "https://3d-portfolio-lwjr.vercel.app",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
