@@ -258,8 +258,8 @@ const projects: Project[] = [
         PROJECT_SKILLS.sockerio,
       ],
     },
-    live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
+    live: "https://3d-portfolio-lwjr.vercel.app/#projects",
+    github: "https://github.com/vandat-snk/3d-portfolio",
     get content() {
       return (
         <div>
