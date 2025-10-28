@@ -2,6 +2,8 @@ import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
 import { z } from "zod";
 import { Resend } from "resend";
+from: "Portfolio <onboarding@resend.dev>",
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
