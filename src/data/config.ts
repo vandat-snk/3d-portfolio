@@ -32,9 +32,8 @@ const config = {
   },
   social: {
     twitter: "https://x.com/nothotchaddi",
-    linkedin: "https://www.linkedin.com/in/naresh-khatri/",
-    instagram: "https://www.instagram.com/vnadat.1th1",
     facebook: "https://www.facebook.com/vawnddatj",
+    instagram: "https://www.instagram.com/vnadat.1th1",
     github: "https://github.com/vandat-snk",
   },
 };
