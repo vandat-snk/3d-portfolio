@@ -31,7 +31,6 @@ const config = {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/nothotchaddi",
     linkedin: "https://www.linkedin.com/in/dat-van-184351386/",
     instagram: "https://www.instagram.com/vnadat.1th1",
     facebook: "https://www.facebook.com/vawnddatj",
