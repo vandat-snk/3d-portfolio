@@ -23,7 +23,7 @@ const config = {
     "Spline",
     "Framer Motion",
   ],
-  author: "VanDat.1th1",
+  author: "VanDat_",
   email: "datlamson2005@gmail.com",
   site: "https://nareshkhatri.site",
 
