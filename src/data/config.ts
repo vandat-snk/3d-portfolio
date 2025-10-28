@@ -1,23 +1,18 @@
 const config = {
   title: "VanDat_ | Data Engineer",
   description: {
-    long: "Explore the portfolio of Naresh, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
+    long: "Explore the portfolio of Van Dat, a data engineer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including My Portfolio, and more. Let's build something amazing together!",
     short:
-      "Discover the portfolio of Naresh, a full-stack developer creating interactive web experiences and innovative projects.",
+      "Discover the portfolio of Van Dat, a data engineer creating interactive web experiences and innovative projects.",
   },
   keywords: [
-    "Naresh",
+    "Van Dat",
     "portfolio",
-    "full-stack developer",
+    "data engineer",
     "creative technologist",
     "web development",
-    "3D animations", 
+    "3D animations",
     "interactive websites",
-    "Coding Ducks",
-    "The Booking Desk",
-    "Ghostchat",
-    "web design",
-    "GSAP",
     "React",
     "Next.js",
     "Spline",
@@ -25,10 +20,10 @@ const config = {
   ],
   author: "VanDat_",
   email: "datlamson2005@gmail.com",
-  site: "https://3d-portfolio-lwjr.vercel.app",
+  site: "https://3d-portfolio-lwjr.vercel.app",  // ✅ Quan trọng
 
   get ogImg() {
-    return this.site + "/assets/seo/og-image.png";
+    return this.site + "/assets/seo/og-image.png"; // ✅ hoặc ảnh bạn đã đổi tên
   },
   social: {
     facebook: "https://www.facebook.com/vawnddatj",
