@@ -11,7 +11,7 @@ const config = {
     "full-stack developer",
     "creative technologist",
     "web development",
-    "3D animations",
+    "3D animations", 
     "interactive websites",
     "Coding Ducks",
     "The Booking Desk",
