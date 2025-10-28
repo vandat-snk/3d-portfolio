@@ -1,40 +1,30 @@
-import { EmailTemplate } from "@/components/email-template";
-import { config } from "@/data/config";
 import { Resend } from "resend";
+import { NextResponse } from "next/server";
 import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const Email = z.object({
+const EmailSchema = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
-  email: z.string().email({ message: "Email is invalid!" }),
+  email: z.string().email("Invalid email address!"),
   message: z.string().min(10, "Message is too short!"),
 });
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { success, data, error } = Email.safeParse(body);
+    const { fullName, email, message } = EmailSchema.parse(body);
 
-    if (!success) {
-      return Response.json({ error: error?.message }, { status: 400 });
-    }
-
-    const { fullName, email, message } = data;
-
-    const { data: resendData, error: resendError } = await resend.emails.send({
+    const data = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
-      to: [config.email],
-      subject: "Contact me from portfolio",
-      react: EmailTemplate({ fullName, email, message }),
+      to: ["youremail@example.com"], // 👉 đổi thành email thật của bạn
+      subject: `New message from ${fullName}`,
+      reply_to: email,
+      text: message,
     });
 
-    if (resendError) {
-      return Response.json({ resendError }, { status: 500 });
-    }
-
-    return Response.json(resendData);
+    return NextResponse.json(data);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    return NextResponse.json({ error });
   }
 }
