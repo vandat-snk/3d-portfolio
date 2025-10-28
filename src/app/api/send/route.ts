@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       from: "Portfolio <onboarding@resend.dev>",
       to: ["youremail@example.com"], // 👉 đổi thành email thật của bạn
       subject: `New message from ${fullName}`,
-      reply_to: email,
+      replyTo: email,
       text: message,
     });
 
