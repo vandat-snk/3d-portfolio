@@ -32,7 +32,7 @@ const config = {
   },
   social: {
     twitter: "https://x.com/nothotchaddi",
-    linkedin: "https://www.linkedin.com/in/naresh-khatri/",
+    linkedin: "https://www.linkedin.com/in/dat-van-184351386/",
     instagram: "https://www.instagram.com/vnadat.1th1",
     facebook: "https://www.facebook.com/vawnddatj",
     github: "https://github.com/vandat-snk",
