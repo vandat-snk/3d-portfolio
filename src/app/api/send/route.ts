@@ -1,9 +1,7 @@
 import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
-import { z } from "zod";
 import { Resend } from "resend";
-from: "Portfolio <onboarding@resend.dev>",
-
+import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -12,27 +10,23 @@ const Email = z.object({
   email: z.string().email({ message: "Email is invalid!" }),
   message: z.string().min(10, "Message is too short!"),
 });
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    console.log(body);
-    const {
-      success: zodSuccess,
-      data: zodData,
-      error: zodError,
-    } = Email.safeParse(body);
-    if (!zodSuccess)
-      return Response.json({ error: zodError?.message }, { status: 400 });
+    const { success, data, error } = Email.safeParse(body);
+
+    if (!success) {
+      return Response.json({ error: error?.message }, { status: 400 });
+    }
+
+    const { fullName, email, message } = data;
 
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Porfolio <onboarding@resend.dev>",
+      from: "Portfolio <onboarding@resend.dev>",
       to: [config.email],
       subject: "Contact me from portfolio",
-      react: EmailTemplate({
-        fullName: zodData.fullName,
-        email: zodData.email,
-        message: zodData.message,
-      }),
+      react: EmailTemplate({ fullName, email, message }),
     });
 
     if (resendError) {
