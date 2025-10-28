@@ -1,6 +1,9 @@
 import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
 import { z } from "zod";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
